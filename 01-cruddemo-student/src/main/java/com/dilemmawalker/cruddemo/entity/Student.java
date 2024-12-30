@@ -38,7 +38,7 @@ public class Student {
     }
 
     //3. define getters/setters
-    //configuring this using annotation.
+    //configuring this using annotation.(lombok)
 
 
 
