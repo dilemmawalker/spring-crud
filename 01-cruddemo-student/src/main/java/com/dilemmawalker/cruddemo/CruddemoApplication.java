@@ -2,6 +2,7 @@ package com.dilemmawalker.cruddemo;
 
 import com.dilemmawalker.cruddemo.dao.StudentDAOImpl;
 import com.dilemmawalker.cruddemo.entity.Student;
+import com.dilemmawalker.cruddemo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,13 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class CruddemoApplication {
+
+	private StudentService studentService;
+
+	@Autowired
+	CruddemoApplication(StudentService studentService){
+		this.studentService = studentService;
+	}
 
 //	private StudentDAOImpl studentDAO;
 //
@@ -27,28 +35,8 @@ public class CruddemoApplication {
 		//command line runner is executed after all beans are created & app is setup.
 
 		return runner -> {
-			saveStudent(studentDAO);
+			studentService.saveStudent(studentDAO);
 		};
-	}
-
-	public void saveStudent(StudentDAOImpl studentDAO){
-		System.out.println("construct student with info");
-		Student demoStudent = new Student("yash", "handa", "apoorvagupta010801@gmail.com");
-		System.out.println("print student: "+ demoStudent);
-
-		//CREATE
-		System.out.println("Save student");
-		studentDAO.save(demoStudent);
-		System.out.println("Student saved successfully");
-
-		System.out.println("Display id of saved student");
-		int studentId = demoStudent.getId();
-		System.out.println("id of student is: "+ studentId);
-
-		//READ
-		System.out.println("find the id in DB");
-		Student tempStudent = studentDAO.findById(studentId);
-		System.out.println("Student found is: "+ tempStudent);
 	}
 
 }
