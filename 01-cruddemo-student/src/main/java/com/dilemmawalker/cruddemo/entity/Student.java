@@ -29,6 +29,7 @@ public class Student {
 
 
     //2. define constructors
+    //Can use annotation @NoArgsConstructor & @AllArgsConstructor here
 
     public Student(){}
     public Student(String firstName, String lastName, String email){
@@ -43,6 +44,7 @@ public class Student {
 
 
     //4. define toString() method
+    //Can also use @ToString here
 
     @Override
     public String toString() {

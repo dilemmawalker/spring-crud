@@ -32,10 +32,11 @@ public class CruddemoApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAOImpl studentDAO){
-		//command line runner is executed after all beans are created & app is setup.
+		//command line runner is executed after all beans are created & app is set up.
 
 		return runner -> {
-			studentService.saveStudent(studentDAO);
+//			studentService.queryForStudentsForLastName(studentDAO);
+			studentService.queryForStudentsForLastName(studentDAO, "handa");
 		};
 	}
 
