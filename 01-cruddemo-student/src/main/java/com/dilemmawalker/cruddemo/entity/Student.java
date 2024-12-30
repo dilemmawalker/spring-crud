@@ -13,7 +13,7 @@ public class Student {
     //1. define fields
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increments & assigns value of @Id column
     @Column(name="id")
     private int id;
 

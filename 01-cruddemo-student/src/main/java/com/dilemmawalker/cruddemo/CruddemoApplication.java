@@ -33,9 +33,10 @@ public class CruddemoApplication {
 
 	public void saveStudent(StudentDAOImpl studentDAO){
 		System.out.println("construct student with info");
-		Student demoStudent = new Student("apoorva", "gupta", "apoorvagupta010801@gmail.com");
+		Student demoStudent = new Student("yash", "handa", "apoorvagupta010801@gmail.com");
 		System.out.println("print student: "+ demoStudent);
 
+		//CREATE
 		System.out.println("Save student");
 		studentDAO.save(demoStudent);
 		System.out.println("Student saved successfully");
@@ -43,6 +44,11 @@ public class CruddemoApplication {
 		System.out.println("Display id of saved student");
 		int studentId = demoStudent.getId();
 		System.out.println("id of student is: "+ studentId);
+
+		//READ
+		System.out.println("find the id in DB");
+		Student tempStudent = studentDAO.findById(studentId);
+		System.out.println("Student found is: "+ tempStudent);
 	}
 
 }

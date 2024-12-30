@@ -18,8 +18,13 @@ public class StudentDAOImpl implements StudentDAO{
     }
 
     @Override
-    @Transactional //handles transaction management, necessary for any DB operation.
+    @Transactional //handles transaction management, necessary for any update DB operation.
     public void save(Student student){
         entityManager.persist(student);
+    }
+
+    @Override
+    public Student findById(Integer id){
+        return entityManager.find(Student.class, id);
     }
 }
