@@ -45,12 +45,27 @@ public class StudentService {
 
     public void updateStudent(StudentDAOImpl studentDAO){
         //get the student
-        Student student = studentDAO.findById(1);
+        Student student = studentDAO.findById(3);
 
         //update in local value
         student.setLastName("scooby");
+        System.out.println("updated student: "+ student);
 
         //store updated value in DB
         studentDAO.update(student);
+    }
+
+    public void deleteStudent(StudentDAOImpl studentDAO){
+        int result = studentDAO.delete("handa");
+        System.out.println("result is: "+ result);
+    }
+
+    public void remove(StudentDAOImpl studentDAO){
+            studentDAO.remove(1);
+    }
+
+    public void removeAll(StudentDAOImpl studentDAO){
+        int ans = studentDAO.removeAll();
+        System.out.println("no of students removed: "+ ans);
     }
 }

@@ -2,6 +2,7 @@ package com.dilemmawalker.cruddemo.dao;
 
 import com.dilemmawalker.cruddemo.entity.Student;
 
+import javax.swing.plaf.synth.SynthToolTipUI;
 import java.util.List;
 
 public interface StudentDAO {
@@ -17,4 +18,10 @@ public interface StudentDAO {
     public List<Student> findByLastName(String name);
 
     public void update(Student student);
+
+    public int delete(String name);
+
+    public void remove(int id);
+
+    public int removeAll();
 }

@@ -37,7 +37,10 @@ public class CruddemoApplication {
 		return runner -> {
 //			studentService.queryForStudentsForLastName(studentDAO);
 //			studentService.queryForStudentsForLastName(studentDAO, "gupta");
-			studentService.updateStudent(studentDAO);
+//			studentService.updateStudent(studentDAO);
+//			studentService.deleteStudent(studentDAO);
+//			studentService.remove(studentDAO);
+			studentService.removeAll(studentDAO);
 		};
 	}
 
