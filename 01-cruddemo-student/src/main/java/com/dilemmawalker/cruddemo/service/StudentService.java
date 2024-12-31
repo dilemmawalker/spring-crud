@@ -42,4 +42,15 @@ public class StudentService {
             System.out.println(student);
         }
     }
+
+    public void updateStudent(StudentDAOImpl studentDAO){
+        //get the student
+        Student student = studentDAO.findById(1);
+
+        //update in local value
+        student.setLastName("scooby");
+
+        //store updated value in DB
+        studentDAO.update(student);
+    }
 }
