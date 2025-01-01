@@ -35,12 +35,13 @@ public class CruddemoApplication {
 		//command line runner is executed after all beans are created & app is set up.
 
 		return runner -> {
+			studentService.saveStudent(studentDAO);
 //			studentService.queryForStudentsForLastName(studentDAO);
 //			studentService.queryForStudentsForLastName(studentDAO, "gupta");
 //			studentService.updateStudent(studentDAO);
 //			studentService.deleteStudent(studentDAO);
 //			studentService.remove(studentDAO);
-			studentService.removeAll(studentDAO);
+//			studentService.removeAll(studentDAO);
 		};
 	}
 
